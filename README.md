@@ -27,8 +27,18 @@ object for how long since the start occurred. useful for performance tracking
 
 - 1.3.1
 
-**usage**
-Early on in your application declare.
+## MAVEN
+
+    <dependency>
+      <groupId>com.github.realzimboguy</groupId>
+      <artifactId>esoslog</artifactId>
+      <version>3.0.1-RELEASE</version>
+    </dependency>
+
+
+## How to use
+
+Early on in your application startup declare.
 
         new EsLog(true,new EsProperty()
                 .setEsBulkUrl("http://localhost:9200/_bulk")
@@ -36,9 +46,15 @@ Early on in your application declare.
                 .setPassword("FXl7CjgKFDjC0r5S29au")
         );
 
-Parameters are :
+quick use (look further down for more examples)
+
+    EsLog.log(EsLog.LogType.INFO,"SYSTEM","In Business people");
+
+
+### Parameters are :
 
 esBulkUrl           : normal bulk url
+
 
 username            : the elasticsearch username (basic authentication)
 
@@ -219,17 +235,19 @@ DATA IN ES
     }
     }
 
-#Performance Testing
+# Performance Testing
 
 Using the Test class where it puts 5000 logs per second, no noticeable lag or hit. (ES/OS) running on same machine.
 I have run this for a few hours and remains stable.
 
 Seeing as this library is for small to medium enterprise uses, I havnt seen a need to do any stress testing further
 
-In order to stress this to natural breaking point would require 
+In order to stress this to natural breaking point would require much more resources and time and not show much.
+
+![alt text](https://github.com/RealZimboGuy/es-os-log/blob/master/images/esoslog_visualvm.png?raw=true)
 
 
-#Licence 
+# Licence 
 
 Copyright [2022] [RealZimboGuy]
 
